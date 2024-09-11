@@ -1,5 +1,14 @@
 {
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    ".vscode": true,
+    "node_modules": true,
+    ".gitignore": true,
+    "vite.*": true,
+    "package*": true,
+    "dist": true,
+    ".lesson": true
   }
+}
