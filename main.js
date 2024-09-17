@@ -15,7 +15,7 @@ let userName = await ti.readText();
 ti.output("Nice to meet you, " + userName);
 ti.output(userName + ", can you think of a sport to guess?");
 ti.output(
-  "The options are: soccer, basketball, football, rugby, baseball, track and field, tennis, volleyball, cricket, hockey, F1, NASCAR, and esports"
+  "The options are: soccer, basketball, football, rugby, baseball, lacrosse, tennis, volleyball, cricket, hockey, F1, NASCAR, and esports"
 );
 await ti.readText();
 let CanYouThinkOfASportToGuess = await ti.readYesorNo;
@@ -27,22 +27,31 @@ if (includesBalls) {
   ti.output(
     "Does the sport use a small or big ball? (yes for small ball, no for big ball"
   );
-  await ti.readYesOrNo();
-  if (includesBalls) {
+  let usessmallball=await ti.readYesOrNo();
+  if (usessmallball) {
     // includes balls
     ti.output("Does the sport use bats?");
-    await ti.readYesOrNo();
-    if (ti.readYesOrNo()) {
+    let usesBats = await ti.readYesOrNo();
+    if (usesBats) {
       ti.output("Is the sport baseball?");
       await ti.readYesOrNo();
-    } else {
-      // not baseball...
-      ti.output("Is the sport cricket?");
-    }
-  } else {
-   
-  }
-} else {
+    ti.output("Is the sport cricket")} else {
+      // not uses bats...
+      ti.output("Is the sport tennis?");
+    await ti.readYesOrNo(); 
+  ti.output("Is the sport lacrosse")}
+  } else { 
+ //if yes to big ball... 
+ti.output("Is the sport mainly played inside or outside? (yes for inside, no for outside")
+  let playedInside=await ti.readYesOrNo();
+if (playedInside){
+  ti.output("Is your sport basketball?"); 
+  await ti.readYesOrNo();
+  ti.output("Is your sport volleyball?");
+  } else {}
+}
+}
+ else {
   // does not include balls
   ti.output("Does the sport include sticks?");
 }
