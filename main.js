@@ -48,7 +48,11 @@ if (playedInside){
   ti.output("Is your sport basketball?"); 
   await ti.readYesOrNo();
   ti.output("Is your sport volleyball?");
-  } else {}
+  } else { 
+    ti.output("Is your sport soccer?"); 
+    await ti.readYesOrNo(); 
+    ti.output("Is your sport football?")
+  }
 }
 }
  else {
